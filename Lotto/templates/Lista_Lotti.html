@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="container ">
+        <div class='row justify-content-center mt-5'>
+            <div class='col-10'>
+                <table class="table table-dark table-striped-expand-lg" style="text-align: center;">
+                    <th>
+                        Hr
+                    </th>
+                    <th>
+                        Titolo Transazione
+                    </th>
+                    <th>
+                        Tipologia
+                    </th>
+                    <th>
+                        Hash
+                    </th>
+                    {% for a in lotti %}
+                    <tbody>
+                        <td>
+                            {{ a.id }}
+                        </td>
+                        <td>
+                            {{ a.titolo }}
+                        </td>
+                        <td>
+                            {% for tipologia in a.tipologia.all %}{{ tipologia }}{% endfor %}
+                        </td>
+                        <td>
+                            <a href="{{ a.get_absolute_url }}">{{ a.txId }}</a>
+                        </td>
+                        {% endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block title %}{{ block.super }}| Dettagli Lotti {% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class='row justify-content-center' style="margin-top: 50px;">
+        <div class="col-6">
+            <p><strong>Utente Creazione:</strong> {{ Lotto.utente_creazione }}</p>
+            <p><strong>Titolo :</strong> {{ Lotto.titolo }}</p>
+            <p><strong>Tipologia :</strong> {% for categoria in Lotto.tipologia.all %} {{ categoria }} {% endfor %}</p>
+            <p><strong>Descrizione :</strong> {{ Lotto.descrizione }}</p>
+            <p><strong>Data Creazione :</strong> {{ Lotto.data_creazione }}</p>
+            <p><strong>Hash :</strong> {{ Lotto.hash }}</p>
+            <p><strong>TxId :</strong> {{ Lotto.txId }}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

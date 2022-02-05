@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+    <div class='row justify-content-center' style="margin-top: 50px;">
+        <div class="col-12">
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+                <div class="col" >
+                  <div class="card h-100">
+                    <img src="https://cdn.pixabay.com/photo/2019/06/17/19/48/source-4280758_960_720.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Lotto</h5>
+                      <p class="card-text">Questa funzione ci permette di avere una visualizzazione Json di tutti i lotti caricati a sistema</p>
+                    </div>
+                    <div class="card-footer">
+                      <a href="{% url 'api_lotto' %}"><input type="submit" value="Vai" name='invio ' class="btn btn-primary"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="https://media.istockphoto.com/photos/software-developer-programming-code-on-computer-picture-id485008236" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Tipologia</h5>
+                      <p class="card-text">Questa funzione ci permette di avere una visualizzazione Json di tutte le tipologie caricate che serviranno poi per completare l'apposito campo nel lotto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'api_categoria' %}"><input type="submit" value="Vai" name='invio ' class="btn btn-primary"></a>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %} 

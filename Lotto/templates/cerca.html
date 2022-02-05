@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ block.super }}| Cerca Lotti {% endblock title %}
+
+{% block content %}
+    <div >
+    <h1 class = 'mt-3'>Risultati Della Ricerca</h1>
+    <hr>
+
+    <div class="row mt-3">
+
+        <div class = 'col-4'>
+            <h5><strong>Codici</strong></h5><strong></strong>
+            {% if codici %}
+                {% for cod in codici %}
+                    <p><strong>Hash: </strong>{{ cod.hash}}</p>
+                    <p><strong>Descrizione: </strong>{{ cod.descrizione}}</p>
+                {% endfor %}
+            {% else %}
+                <p>---</p>
+            {% endif %}
+        </div>
+
+        <div class = 'col-4'>
+            <h5><strong>Categorie</strong></h5><strong></strong>
+            {% if categoria %}
+                {% for cat in categoria %}
+                    <p>{{ cat.nome}}</p>
+                {% endfor %}
+            {% else %}
+                <p>---</p>
+            {% endif %}
+        </div>
+
+        <div class = 'col-4'>
+            <h5><strong>Utenti</strong></h5><strong></strong>
+            {% if user %}
+                {% for us in user %}
+                    <p>{{ us.username }}</p>
+                {% endfor %}
+            {% else %}
+                <p>---</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

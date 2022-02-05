@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ block.super }}|LogOut {% endblock title %}
+
+
+{% block content %}
+<br>
+    <div class='container'>
+        <div class='row ' style="justify-content:center; text-align: center;"> 
+            <div class="col-6">   
+                <p>Logout Completato</p>
+            <a href="{% url 'login' %}">Clicca Qui Per Rieffetuare Il Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

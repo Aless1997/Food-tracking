@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block title %}{{ block.super }}| Lista Utenti{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class='row justify-content-center' style="margin-top: 50px;">
+        <div class="col-6">
+            {% for a in utenti %}
+            <p><strong>Username: </strong>{{ a.username }}</p>
+            <p><strong>Nome: </strong>{{ a.first_name }}</p>
+            <p><strong>Cognome: </strong>{{ a.last_name }}</p>
+            <p><strong>Email: </strong>{{ a.email }}</p>
+            <p><strong>Staff: </strong>{{ a.is_staff }}</p>
+            <p><strong>Superuser: </strong>{{ a.is_superuser }}</p>
+            <p><strong>Indirizzo Ip: </strong>{{ a.indirizzo_ip }}</p>
+            <p><strong>Registrazione: </strong>{{ a.date_joined }}</p>
+            <p><strong>Ultimo Accesso: </strong>{{ a.last_login }}</p>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %} 

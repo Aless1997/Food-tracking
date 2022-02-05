@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block title %}{{ block.super }}| Dettaglio User{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class='row justify-content-center' style="margin-top: 50px;">
+        <div class="col-6">
+            <p><strong>Username :</strong> {{ user.username }}</p>
+            <p><strong>Nome :</strong> {{ user.first_name }}</p>
+            <p><strong>Cognome :</strong> {{ user.last_name }}</p>
+            <p><strong>Email :</strong> {{ user.email }}</p>
+            <p><strong>Data Registrazione :</strong> {{ user.date_joined }}</p>
+            <p><strong>Ultimo Accesso :</strong> {{ user.last_login }}</p>
+            <p><strong>Indirizzo Ip :</strong> {{ user.indirizzo_ip }}</p>
+
+            {% if user.indirizzo_ip != user.last_ip %}
+            <div class="card" style="width: 18rem;">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center;">Attenzione!</h5>
+                  <p class="card-text">Questo Inidirzzo Ip è differente dall'ultiumo che ha avuto accesso! L'ultimo indirizzo ip è: {{user.last_ip}}</p>
+                </div>
+            
+              </div>
+
+            {% endif %}
+                
+            
+            <p><strong>Lotti Creati :</strong> {% for a in user.utenti.all %} <ul><li>{{ a.txId }}</li></ul> {% endfor %}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %} 

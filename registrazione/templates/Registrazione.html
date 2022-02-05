@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags%}
+
+{% block title %}{{ block.super }}|Registrazione {% endblock title %}
+
+{% block content %}
+    <div class='container' style="text-align: center; margin-top: 50px;">
+        <div class='row' style=" justify-content: center">
+            <div class='col-3'>
+                <div class='form_prs'>
+                <form action="" method="post" novalidate>
+                    {% for field in form %}
+                    {% csrf_token %}
+                    {{ field.errors}}
+                    <p class='label'>{{ field.label_tag }}</p>
+                    <p>{{ field }}</p>
+                    {% endfor %}
+                    <hr>
+                    <input type="submit" name='Invia' value="Invia" class="btn btn-primary mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
